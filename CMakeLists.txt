@@ -5,6 +5,7 @@ project(aor)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_C_STANDARD 11)
 
-add_executable(${PROJECT_NAME} main.cpp)
+file(GLOB_RECURSE MEMORY "memory/*.cpp")
+add_executable(${PROJECT_NAME} main.cpp ${MEMORY})
 
 target_precompile_headers(${PROJECT_NAME} PRIVATE pch.hpp)
