@@ -33,6 +33,7 @@ public:
       return buffer;
     return out;
   }
+
   template <> std::string read<std::string>(const uintptr_t address) const {
     size_t size = 64;
     std::vector<char> buffer(size);
