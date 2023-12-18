@@ -34,18 +34,28 @@ class Entity {
   uint32_t killCount;            // 0x01DC
   char pad_01E0[2680];           // 0x01E0
   char name[16];                 // 0x0205
+  std::string name_str;
 
 public:
   
   uint32_t getEntity() { return entity; }
-  
+
   int getHealth() { return health; }
 
   int getArmor() { return armor; }
 
-  std::string getName() { return name; }
+  std::string getName() { return name_str; }
 
+  Vector3 getPosition() { return position; }
+
+  Vector3 getHeadPos() { return headPos; }
+
+  Vector3 getViewAngles() { return viewAngles; }
+  
   bool isAlive() { return this->getHealth() > 0; }
+
+  Entity* player(uint32_t address);
+  
 };
 
 inline Entity m_entity{};
