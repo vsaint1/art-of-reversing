@@ -26,6 +26,7 @@
 
 #include "memory/memory.hpp"
 #include "cheetos/math/math.hpp"
+#include "cheetos/globals.hpp"
 #include "cheetos/features/entity.hpp"
 
 #endif // PCH_HPP
