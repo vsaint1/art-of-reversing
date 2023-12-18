@@ -1,19 +1,34 @@
 #include "pch.hpp"
 
 int main() {
-  LOG("PID: %d", m_memory.getPid());
+
+  if (!m_memory.getPid())
+    return 0;
 
   const auto module_base = m_memory.getModuleBase(GAME_NAME);
-  uint32_t local_player = m_memory.read<uint32_t>(module_base.value() + 0x017E254);
-
-  uint32_t entity_list = m_memory.read<uint32_t>(module_base.value() + 0x18AC04);
-  int player_count = m_memory.read<int>(module_base.value() + 0x18AC0C);
-  LOG("Entity list %p, player count %d", entity_list, player_count);
 
   while (!GetAsyncKeyState(VK_END)) {
+
+    uint32_t local_player = m_memory.read<uint32_t>(module_base.value() + 0x017E254);
+
+    if (!local_player)
+      continue;
+
+    uint32_t entity_list = m_memory.read<uint32_t>(module_base.value() + 0x18AC04);
+    if (!entity_list)
+      continue;
+      
+    int player_count = m_memory.read<int>(module_base.value() + 0x18AC0C);
+    if (!player_count)
+      continue;
+
     Entity *entity_local = m_entity.player(local_player);
+
     if (!entity_local->isAlive())
       continue;
+
+    ViewMatrix_t local_view_matrix = m_memory.read<ViewMatrix_t>(module_base.value() + 0x017DFFC);
+    LOG("ViewMatrix %f %f %f %f", local_view_matrix.matrix[0][0], local_view_matrix.matrix[0][1], local_view_matrix.matrix[0][2], local_view_matrix.matrix[0][3]);
 
     for (int i = 0; i < player_count; i++) {
       uint32_t entity = m_memory.read<uint32_t>(entity_list + (i * 0x4));
