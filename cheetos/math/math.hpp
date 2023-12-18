@@ -28,3 +28,7 @@ struct Vector3 {
 
   float Distance(const Vector3 &other) const noexcept { return std::sqrtf(std::powf(x - other.x, 2) + std::powf(y - other.y, 2) + std::powf(z - other.z, 2)); }
 };
+
+struct ViewMatrix_t {
+  float matrix[4][4];
+};
