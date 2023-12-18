@@ -8,6 +8,7 @@
 #include <string>
 #include <optional>
 #include <vector>
+#include <cstddef>
 
 #define GAME_NAME "ac_client.exe"
 
@@ -24,9 +25,9 @@
 }
 #endif
 
+#include "cheetos/globals.hpp"
 #include "memory/memory.hpp"
 #include "cheetos/math/math.hpp"
-#include "cheetos/globals.hpp"
 #include "cheetos/features/entity.hpp"
 
 #endif // PCH_HPP
