@@ -22,6 +22,16 @@ Memory::Memory(const std::string_view &processName) {
   LOG("Opened a handle %p to process %d.", this->handle, this->pid);
 }
 
+uintptr_t Memory::traceAddress(const uintptr_t address, const std::vector<uintptr_t> &offsets) const {
+  uintptr_t result = address;
+
+  for (const auto &offset : offsets) {
+    result = this->read<uintptr_t>(result + offset);
+  }
+
+  return result;
+}
+
 std::optional<uintptr_t> Memory::getModuleBase(const std::string_view &moduleName) const {
   MODULEENTRY32 entry;
   entry.dwSize = sizeof(MODULEENTRY32);
