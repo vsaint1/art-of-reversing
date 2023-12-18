@@ -19,8 +19,11 @@ public:
   int getPid() const { return pid; }
 
   std::optional<int> getProcessId() const;
+
   std::optional<uintptr_t> getModuleBase(const std::string_view &moduleName) const;
 
+  uintptr_t traceAddress(const uintptr_t address, const std::vector<uintptr_t> &offsets) const;
+  
   template <typename T> T read(const uintptr_t address) const {
     T buffer{};
     this->NtReadVirtualMemory(this->handle, reinterpret_cast<void *>(address), &buffer, sizeof(T), nullptr);
