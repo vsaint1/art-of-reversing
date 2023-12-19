@@ -50,7 +50,37 @@ Demo logging `process and entities` data.
 
 <img src="./examples/example.png" alt="running fun">
 
+## Reversing in IDA
+
+
+- `team` 0x30C
+- `clan` 0x1C4
+
+<img src="./examples/reversing_ida.png" alt="ida reversing entities">
+
+- In game
+<img src="./examples/in_game.png" alt="in game data">
+
+- Using reversed data
+
+<img src="./examples/entities.png" alt="using  ida reversed entities">
+
+## Traceline
+```c++
+// intersectgeometry function
+int __fastcall sub_4CCA80(float *a1, int a2)
+
+// intersectclosest function
+int __usercall sub_4CA250@<eax>(int a1@<edx>, int a2, float *a3, _DWORD *a4, char a5)
+```
+
 
 
 > [!WARNING]
 > if ure learning, try to reverse it yourself and use the file for help `reversed_helper.h`, otherwise just use the file.
+
+# TODO
+
+- [x] Entities
+- [x] Weapon 
+- [x] Visible Check
