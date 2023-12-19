@@ -41,7 +41,16 @@ cd folder
 run build.bat
 ```
 
+# Example
+Game version `1.3.0.2`
 
-> [!WARNING]  
-> Project under development, feel free to contribute.
+Reversed data and helpers can be found [here](./examples/reversed_helper.h)
 
+Demo logging `process and entities` data.
+
+<img src="./examples/example.png" alt="running fun">
+
+
+
+> [!WARNING]
+> if ure learning, try to reverse it yourself and use the file for help `reversed_helper.h`, otherwise just use the file.
