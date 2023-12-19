@@ -40,7 +40,7 @@ int main() {
         continue;
 
       if (player->isAlive()) {
-        LOG("Entity %p, Health %d , Armor %d, HeadPos %f %f %f, Position %f %f %f, ViewAngle %f %f %f, Name %s, WeaponType %s, WeaponName %s", player->getEntity(), player->getHealth(),
+        LOG("Entity %p, Health %d , Armor %d, HeadPos %f %f %f, Position %f %f %f, ViewAngle %f %f %f, Name %s, WeaponType %s, WeaponName %s \n", player->getEntity(), player->getHealth(),
             player->getArmor(), player->getHeadPos().x, player->getHeadPos().y, player->getHeadPos().z, player->getPosition().x, player->getPosition().y, player->getPosition().z,
             player->getViewAngles().x, player->getViewAngles().y, player->getViewAngles().z, player->getName().c_str(), player->getWeaponType().c_str(), player->getWeaponName().c_str());
       }
