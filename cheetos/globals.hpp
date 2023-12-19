@@ -22,6 +22,7 @@ inline std::ptrdiff_t name = 0x0205;
 inline std::ptrdiff_t position = 0x0030;
 inline std::ptrdiff_t head_pos = 0x0004;
 inline std::ptrdiff_t view_angles = 0x0034;
+inline std::ptrdiff_t inventory = 0x368;
 
 
 } // namespace offsets
