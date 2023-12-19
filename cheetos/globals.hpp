@@ -1,8 +1,8 @@
 #pragma once
 
 namespace offsets {
-inline std::ptrdiff_t local_player = 0x017E254;
-inline std::ptrdiff_t entity_list = 0x18AC04;
+inline std::ptrdiff_t local_player = 0x18AC00;
+inline std::ptrdiff_t entity_list = 0x0191FCC;
 inline std::ptrdiff_t player_count = 0x18AC0C;
 inline std::ptrdiff_t view_matrix = 0x017DFFC;
 inline std::ptrdiff_t health = 0x00EC;
@@ -21,7 +21,7 @@ inline std::ptrdiff_t kill_count = 0x01DC;
 inline std::ptrdiff_t name = 0x0205;
 inline std::ptrdiff_t position = 0x0028;
 inline std::ptrdiff_t head_pos = 0x0004;
-inline std::ptrdiff_t view_angles = 0x0034;
+inline std::ptrdiff_t view_angles = 0x34;
 inline std::ptrdiff_t inventory = 0x368;
 
 

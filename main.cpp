@@ -26,7 +26,7 @@ int main() {
 
     if (!entity_local->isAlive())
       continue;
-
+    LOG("ViewAngle %f %f %f", entity_local->getViewAngles().x, entity_local->getViewAngles().y, entity_local->getViewAngles().z);
     ViewMatrix_t local_view_matrix = m_memory.read<ViewMatrix_t>(module_base.value() + offsets::view_matrix);
     LOG("ViewMatrix %f %f %f %f", local_view_matrix.matrix[0][0], local_view_matrix.matrix[0][1], local_view_matrix.matrix[0][2], local_view_matrix.matrix[0][3]);
 
@@ -39,12 +39,11 @@ int main() {
       if (!player)
         continue;
 
-
-        if (player->isAlive()) {
-          LOG("Entity %p, Health %d , Armor %d, HeadPos %f %f %f, Position %f %f %f, ViewAngle %f %f %f, Name %s", player->getEntity(), player->getHealth(), player->getArmor(), player->getHeadPos().x,
-              player->getHeadPos().y, player->getHeadPos().z, player->getPosition().x, player->getPosition().y, player->getPosition().z, player->getViewAngles().x, player->getViewAngles().y,
-              player->getViewAngles().z, player->getName().c_str());
-        }
+      if (player->isAlive()) {
+        LOG("Entity %p, Health %d , Armor %d, HeadPos %f %f %f, Position %f %f %f, ViewAngle %f %f %f, Name %s, WeaponType %s, WeaponName %s", player->getEntity(), player->getHealth(),
+            player->getArmor(), player->getHeadPos().x, player->getHeadPos().y, player->getHeadPos().z, player->getPosition().x, player->getPosition().y, player->getPosition().z,
+            player->getViewAngles().x, player->getViewAngles().y, player->getViewAngles().z, player->getName().c_str(), player->getWeaponType().c_str(), player->getWeaponName().c_str());
+      }
     }
 
     Sleep(1000);

@@ -28,6 +28,8 @@
 #include "cheetos/globals.hpp"
 #include "memory/memory.hpp"
 #include "cheetos/math/math.hpp"
+#include "cheetos/features/inventory.hpp"
+#include "cheetos/features/weapon.hpp"
 #include "cheetos/features/entity.hpp"
 
 #endif // PCH_HPP
